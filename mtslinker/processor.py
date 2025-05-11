@@ -106,6 +106,7 @@ def compile_final_video(total_duration: float, video_clips: List[VideoFileClip],
             logging.info(f'Duration limit! Crop!')
             video_result = video_result.subclip(0, max_duration)
 
+    video_result.fps = 30
     video_result.write_videofile(
         output_path,
         codec='libx264',
